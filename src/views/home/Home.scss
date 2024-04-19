@@ -1,0 +1,316 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+$color-light-green : #80d671e3;
+$color-dark-green : #26b585cc;
+$color-suttle-white:  #ececec; 
+$color-suttle-white-transparent:  #ececec85; 
+$color-white: white;
+$color-box-shadow: rgba(0, 0, 0, 0.363);
+$color-black:rgba(69, 62, 62, 0.758);
+
+
+.header{
+    background-image: linear-gradient(to right bottom,$color-dark-green,$color-light-green), url('../../assets/hero.jpg');
+    height: 95vh;
+    clip-path: polygon(0 0,100% 0,100% 85%,0% 100%);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.brand img{
+    position: absolute;
+    height: 3.6rem;
+    top: 2rem;
+    left: 2rem;
+}
+
+.heading{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:$color-suttle-white;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-main{
+        font-size: 7rem;
+        display: block;
+        font-weight: 400;
+        letter-spacing: 1.9rem;
+        animation: toRight 1s ease-out;
+    }
+    &-sub{
+        font-size: xx-large;
+        display: block;
+        letter-spacing: .8rem;
+        animation: toLeft 1s ease-out;
+        font-size: 2.5rem;
+    }
+}
+
+
+
+@keyframes toRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes toLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes toTop {
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.btn{
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 200rem;
+    color: black;
+    animation: toTop 1s ease-out;
+    transform: translateY(0rem);
+    box-shadow: 0 1rem 4rem $color-box-shadow;
+    width: 12rem;
+    text-align: center;
+    &:hover{
+        transform: translateY(-.2rem);
+        box-shadow: 0 .6rem .5rem $color-box-shadow;
+
+        &::after{
+            transform: translateY(-.2rem) scaleX(1.7) scaleY(1.5);
+            opacity: 0;
+        }
+    }
+
+    &:active{
+        transform: translateY(-.1rem);
+        box-shadow: 0 .1rem 4rem $color-box-shadow;
+        &::after{
+            transform: translateY(-.1rem) scaleX(1.7) scaleY(1.5);
+            opacity: 0;
+        }
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 200rem;
+        
+        box-shadow: 0 .5rem .4rem $color-box-shadow;
+        z-index: -1;
+        transition: all .4s;
+        
+    }
+
+    &-white{
+        margin-top: 1rem;
+        background-color: $color-white;
+        &::after{
+            background-color: $color-white;
+        }
+    }
+   
+    
+}
+
+.about{
+    background-color: $color-suttle-white;
+    padding-top: 25rem;
+    margin-top: -15rem;
+    text-align: center;
+
+}
+
+.col_1of2{
+    width: calc(50% - 10rem);
+    display: inline-block;
+    &:not(:last-child){
+        margin-right: 10rem;
+    }
+    margin-bottom: 10rem;
+}
+
+.header-secondary{
+    text-transform: capitalize;
+    font-size: 4rem;
+    background-image: linear-gradient(to right,$color-dark-green,$color-light-green);
+    background-clip: text;
+    color: transparent;
+    transition: transform .2s;
+    margin-bottom: 10rem;
+    &:hover{
+        transform: scale(1.2) skewX(5deg) skewY(-10deg);
+    }
+}
+.composition{
+    position: relative;
+    width: 100%;
+    &__photo{
+        position: absolute;
+        width: 55%;
+        box-shadow: 0 1rem 4rem;
+        transition: all .2s;
+        z-index: 10;
+        &:hover{
+            outline: 1.5rem solid $color-dark-green;
+            outline-offset: 2rem;
+            transform: scale(1.1);
+            box-shadow: 0 2rem 4rem;
+            z-index: 20;
+        }
+       
+
+        &-1{
+            top: -2rem;
+            left: 0rem;
+        }
+        &-2{
+            top: 2rem;
+            right: 0rem;
+        }  
+        &-3{
+            top: 10rem;
+            left: 20%;
+        }    
+    }
+    
+
+}
+
+.content{
+    color: $color-black;
+    & h3{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        margin-bottom: 2rem;
+    }
+    & p{
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 5rem;
+    }
+   
+}
+
+.row{
+    display: flex;
+}
+
+.btn-txt{
+    text-decoration: none;
+    color: $color-dark-green;
+    border-bottom: 2px solid$color-dark-green;
+    font-size: 1.6rem;
+    transition: all .2s;
+    padding: .3rem;
+    &:hover{
+        transform: translateY(-2rem);
+        color: $color-white;
+        background-color: $color-dark-green;
+        box-shadow: 0 1rem 4rem $color-black;
+       
+    }
+
+    &:active{
+        transform: translateY(-1rem);
+    }
+}
+
+.features{
+    margin-top: -10rem;
+    background-image: linear-gradient(to right, $color-dark-green,$color-light-green), url("../../assets/nat-4.jpg");
+    background-position: top;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transform: skewY(-6deg);
+}
+
+.alignCenter{
+    transform: skewY(6deg);
+    
+}
+
+.feature{
+    float: left;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $color-suttle-white-transparent;
+    width: 25rem;
+    padding: 1.5rem;
+    box-shadow: 0 1rem 4rem $color-box-shadow;
+    transition: transform .2s;
+    margin: 10rem 2rem;
+    
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0 2rem 4rem;
+        
+    }
+
+    & h3{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    & p{
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}
