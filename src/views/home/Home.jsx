@@ -7,6 +7,7 @@ import globeIcon from "../../assets/icons8-globe-ios-17-outlined-96.png";
 import compassIcon from "../../assets/icons8-compas-others-96.png";
 import mapIcon from "../../assets/icons8-map-ice-cream-96.png";
 import heartIcon from "../../assets/icons8-heart-ios-17-outlined-96.png";
+import RotatingCard from '../../components/RotatingCards/RotatingCard';
 
 const Home = ()=>{
     return (
@@ -50,7 +51,7 @@ const Home = ()=>{
                 </div>
             </div>
         </main>
-        <div className='features'>
+        <section className='features'>
             <div className='alignCenter'>
                 
                 <div className="feature">
@@ -74,8 +75,16 @@ const Home = ()=>{
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iusto excepturi, non aperiam eligendi, sequi magni labore iure magnam quas assumenda ipsa! Veniam necessitatibus</p>
                 </div>  
             </div>
-        </div>
-
+        </section>
+        <section className="tours_section text-center">
+            <h2 className='header-secondary'>Most popular tours</h2>
+            <div className="tours">
+                <RotatingCard cssSelector="1" heading="The Sea Explorer" price="$299"/>
+                <RotatingCard cssSelector="2" heading="The Forest Hiker" price="$599"/>
+                <RotatingCard cssSelector="3" heading="The Snow Adventurer" price="$799"/>
+            </div>
+            <a href="#" className="btn btn-green">Discover more tours</a>
+        </section>
         </>
     );
 }
